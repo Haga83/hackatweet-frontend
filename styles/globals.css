@@ -8,3 +8,14 @@ body {
 * {
   box-sizing: border-box;
 }
+
+
+.ant-modal-content {
+  background-color: #15202b !important;
+  padding: 10px !important;
+  border-radius: 10px !important;
+}
+
+.ant-modal-close {
+  color: #fafafa !important;
+}

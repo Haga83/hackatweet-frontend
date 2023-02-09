@@ -21,12 +21,26 @@ function Login() {
     setSignInModal(true);
   };
 
+  const handleCancelSignUp = () => {
+    setSignUpModal(false);
+  };
+
+  const handleCancelSignIn = () => {
+    setSignInModal(false);
+  };
+
+
+  const router = useRouter();
+  if (user.token) {
+    router.push('/');
+  }
+
   return (
     <div className={styles.home}>
-      <Modal open={signUpModal} footer={null}>
+      <Modal onCancel={() =>handleCancelSignUp()} open={signUpModal} footer={null}>
         <SignUp />
       </Modal>
-      <Modal open={signInModal} footer={null}>
+      <Modal onCancel={() =>handleCancelSignIn()} open={signInModal} footer={null}>
         <SignIn />
       </Modal>
       <div className={styles.left}>

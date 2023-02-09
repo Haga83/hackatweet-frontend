@@ -7,13 +7,13 @@ import styles from "../styles/SignUp.module.css";
 
 function SignUp() {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value);
+  // const user = useSelector((state) => state.user.value);
 
   // Redirect to /home if logged in
-  const router = useRouter();
-  if (user.token) {
-    router.push("/");
-  }
+  // const router = useRouter();
+  // if (user.token) {
+  //   router.push("/");
+  // }
 
   const [firstName, setFirstName] = useState("");
   const [username, setUsername] = useState("");

@@ -31,10 +31,10 @@ function Login() {
   };
 
 
-  // const router = useRouter();
-  // if (user.token) {
-  //   router.push('/');
-  // }
+  const router = useRouter();
+  if (user.token) {
+    router.push('/home');
+  }
 
   return (
     <div className={styles.home}>

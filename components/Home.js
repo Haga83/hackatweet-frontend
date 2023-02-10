@@ -94,14 +94,10 @@ function Home() {
                 height={46}
               />
             </div>
-<<<<<<< HEAD
-            <h3 className={styles.h3}>@ {user.username}</h3>
-=======
             <div className={styles.userInfo}>
-              <p className={styles.name}>{user.firstname}</p>
-              <p className={styles.username}>@{user.username}</p>
+              <p className={styles.name}>user{user.firstname}</p>
+              <p className={styles.username}>@user{user.username}</p>
             </div>
->>>>>>> homeTweet
           </div>
           <div className={styles.logout_btn}>
             <button
@@ -122,17 +118,25 @@ function Home() {
             <span>Home</span>
           </div>
           <div className={styles.addTweet}>
-            <textarea
+            <div className={styles.textinput}>
+              <textarea
               type="text"
               placeholder="What's up"
               className={styles.input}
               onChange={(e) => handleTweet(e)}
               value={newTweet}
-            />
-            <p>{newTweet.length}/280</p>
-            <button className={styles.button} onClick={() => handleSubmit()}>
-              Tweet
-            </button>
+              /> 
+            </div>
+            <div className={styles.contentundertext}>
+                  <div className={styles.textlength}>
+                      <p>{newTweet.length}/280</p>
+                  </div>
+                  <div>
+                      <button className={styles.button} onClick={() => handleSubmit()}>
+                        Tweet
+                      </button>
+                  </div>
+            </div>
           </div>
         </div>
         <div className={styles.tweets}>

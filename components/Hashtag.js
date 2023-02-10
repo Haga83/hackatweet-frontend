@@ -45,7 +45,7 @@ function Hashtag() {
                     />
                 </div>
                 <div className={styles.userInfo}>
-                        <h3 className={styles.simpleusername}>user{user.username}</h3>
+                        <h3 className={styles.name}>user{user.username}</h3>
                         <h3 className={styles.username}>@user{user.username}</h3>
                 </div>
           </div>

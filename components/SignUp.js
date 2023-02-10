@@ -7,15 +7,8 @@ import styles from "../styles/SignUp.module.css";
 
 function SignUp() {
   const dispatch = useDispatch();
-  // const user = useSelector((state) => state.user.value);
 
-  // Redirect to /home if logged in
-  // const router = useRouter();
-  // if (user.token) {
-  //   router.push("/");
-  // }
-
-  const [firstName, setFirstName] = useState("");
+  const [firstname, setFirstName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,12 +16,12 @@ function SignUp() {
     fetch("http://localhost:3000/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ firstName, username, password }),
+      body: JSON.stringify({ firstname, username, password }),
     })
       .then((response) => response.json())
       .then((data) => {
         data.result &&
-          dispatch(login({ token: data.token, username, firstName }));
+          dispatch(login({ token: data.token, username, firstname }));
       });
   };
 
@@ -40,7 +33,7 @@ function SignUp() {
         type="text"
         className={styles.input}
         onChange={(e) => setFirstName(e.target.value)}
-        value={firstName}
+        value={firstname}
         placeholder="Firstname"
       />
       <input

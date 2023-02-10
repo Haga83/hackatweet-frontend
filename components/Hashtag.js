@@ -5,7 +5,7 @@ import { logout } from "../reducers/user";
 import Link from "next/Link";
 
 // import LastTweets from "./LastTweets";
-// import Trends from "./Trends";
+import Trends from "./Trends";
 import styles from "../styles/Hashtag.module.css";
 import Image from "next/image";
 
@@ -23,31 +23,31 @@ function Hashtag() {
     <div className={styles.PageTwitter}>
       <div className={styles.left}>
         <div className={styles.logo}>
-          <Link href='/home'> 
-          <Image
-            src="/logo.webp"
-            alt="logo"
-            className={styles.imgLeft}
-            width={50}
-            height={50}
-          />
-          </Link> 
+          <Link href="/home">
+            <Image
+              src="/logo.webp"
+              alt="logo"
+              className={styles.imgLeft}
+              width={50}
+              height={50}
+            />
+          </Link>
         </div>
         <div className={styles.bottomLeft}>
           <div className={styles.userSection}>
-                <div className={styles.user}>
-                    <Image
-                        src="/user.webp"
-                        alt="user image"
-                        className={styles.userimg}
-                        width={46}
-                        height={46}
-                    />
-                </div>
-                <div className={styles.userInfo}>
-                        <h3 className={styles.simpleusername}>user{user.username}</h3>
-                        <h3 className={styles.username}>@user{user.username}</h3>
-                </div>
+            <div className={styles.user}>
+              <Image
+                src="/user.webp"
+                alt="user image"
+                className={styles.userimg}
+                width={46}
+                height={46}
+              />
+            </div>
+            <div className={styles.userInfo}>
+              <h3 className={styles.simpleusername}>{user.username}</h3>
+              <h3 className={styles.username}>@{user.username}</h3>
+            </div>
           </div>
           <div className={styles.logout_btn}>
             <button
@@ -63,21 +63,26 @@ function Hashtag() {
         </div>
       </div>
       <div className={styles.center}>
-            <div className={styles.SearchContent}>
-                    <div className={styles.titleHashtag}>
-                        <span>Hashtag</span>
-                    </div>
-                    <div className={styles.searchHashtag}>
-                        <input type='text' className={styles.Hashtag_searchBar} value='#'></input>
-                    </div>
+        <div className={styles.SearchContent}>
+          <div className={styles.titleHashtag}>
+            <span>Hashtag</span>
           </div>
-          <div className={styles.Hashtagmatch}>
-            {/* tweets based on hashtags */}
+          <div className={styles.searchHashtag}>
+            <input
+              type="text"
+              className={styles.Hashtag_searchBar}
+              value="#"
+            ></input>
           </div>
+        </div>
+        <div className={styles.Hashtagmatch}>
+          {/* tweets based on hashtags */}
+        </div>
       </div>
       <div className={styles.right}>
         <div className={styles.Trends}>
           <span>Trends</span>
+          <Trends />
         </div>
         <div>{/* # */}</div>
       </div>

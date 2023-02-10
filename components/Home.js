@@ -5,7 +5,7 @@ import { logout } from "../reducers/user";
 import { loadTweet, addTweet } from "../reducers/tweet";
 import Link from "next/Link";
 import Tweet from "./Tweet";
-// import Trends from "./Trends";
+import Trends from "./Trends";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 
@@ -13,7 +13,6 @@ function Home() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
   const tweetData = useSelector((state) => state.tweet.value);
-  console.log(tweetData);
   const router = useRouter();
 
   if (!user.token) {
@@ -30,7 +29,6 @@ function Home() {
     fetch(`http://localhost:3000/tweets/all/${user.token}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("data from backend", data);
         data.result && dispatch(loadTweet(data.tweets));
       });
   }, []);
@@ -58,7 +56,10 @@ function Home() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
-          const createdTweet = { ...data.result, user: user };
+          const createdTweet = {
+            ...data.tweet,
+            user: { username: user.username, firstname: user.firstname },
+          };
           dispatch(addTweet(createdTweet));
           setNewTweet("");
         }
@@ -131,16 +132,13 @@ function Home() {
             </button>
           </div>
         </div>
-        <div className={styles.tweets}>
-          {tweetsArr}
-          </div>
+        <div className={styles.tweets}>{tweetsArr}</div>
       </div>
       <div className={styles.right}>
         <div className={styles.Trends}>
           <span>Trends</span>
-          {/* <Trends /> */}
+          <Trends />
         </div>
-        <div>{/* # */}</div>
       </div>
     </div>
   );

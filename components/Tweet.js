@@ -10,8 +10,8 @@ import styles from "../styles/Tweet.module.css";
 function Tweet(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
+    console.log(props)
 
-  console.log("NTM", props);
 
   const handleLike = () => {
     fetch("http://localhost:3000/tweets/like", {
@@ -45,12 +45,12 @@ function Tweet(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        data.reesult && dispatch(deleteTweet(props._id));
+        data.result && dispatch(deleteTweet(props._id));
       });
   };
 
   let likeStyle = {};
-  if (props.likes.some((e) => e.username === user.username)) {
+  if (props.likes && props.likes.some((e) => e.username === user.username)) {
     likeStyle = { color: "#f91980" };
   }
 
@@ -76,9 +76,9 @@ function Tweet(props) {
           className={styles.avatar}
         />
         <p className={styles.content}>
-          <span className={styles.name}>{props.user.firstName}</span>{" "}
+          <span className={styles.name}>{props.user.firstname}</span>
           <span className={styles.greyText}>
-            @{props.user.username} ·{" "}
+            @{props.user.username}
             <Moment className={styles.greyText} fromNow ago>
               {props.createdAt}
             </Moment>

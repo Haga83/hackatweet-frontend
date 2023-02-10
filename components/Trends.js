@@ -5,7 +5,7 @@ import styles from "../styles/Trends.module.css";
 
 function Trends() {
   const user = useSelector((state) => state.user.value);
-  const tweetsData = useSelector((state) => state.tweets.value);
+  const tweetsData = useSelector((state) => state.tweet.value);
 
   const [trendsData, setTrendsData] = useState([]);
 

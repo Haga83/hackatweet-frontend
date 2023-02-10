@@ -7,13 +7,6 @@ import styles from "../styles/SignIn.module.css";
 
 function SignIn() {
   const dispatch = useDispatch();
-  // const user = useSelector((state) => state.user.value);
-
-  // Redirect to /home if logged in
-  // const router = useRouter();
-  // if (user.token) {
-  //   router.push("/");
-  // }
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

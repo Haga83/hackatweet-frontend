@@ -69,6 +69,11 @@ border-radius: 50%;
     color: white;
 }
 
+.logout:hover {
+    background-color: #728394;
+    color: #15202b;
+}
+
 .titleHome {
 display: block;
 color: white;

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { likeTweet, deleteTweet } from "../reducers/tweet";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/Link";
@@ -54,11 +55,13 @@ function Tweet(props) {
     likeStyle = { color: "#f91980" };
   }
 
+  const router = useRouter();
+
   const formattedContent = props.content.split(" ").map((word, i) => {
     if (word.startsWith("#") && word.length > 1) {
       return (
         <span key={i} style={{ fontWeight: "bold" }}>
-          <Link href={`/hashtag/${word.slice(1)}`}>{word}</Link>
+          <Link href="/hashtag">{word}</Link>
         </span>
       );
     }

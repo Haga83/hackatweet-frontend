@@ -21,7 +21,7 @@ function Trends() {
 
   const trends = trendsData.map((data, i) => {
     return (
-      <Link key={i} href={`/hashtag/${data.hashtag.slice(1)}`}>
+      <Link key={i} href={`/hashtag`}>
         <div className={styles.tweetContainer}>
           <h3 className={styles.hashtag}>{data.hashtag}</h3>
           <h4 className={styles.nbrTweet}>

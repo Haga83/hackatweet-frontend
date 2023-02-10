@@ -18,10 +18,12 @@ justify-content: space-between;
 }
 
 .center {
+
 border: solid rgba(114,131,148,.455);
 border-width: 0 1px;
 /* overflow: scroll; */
 display: flex;
+flex-direction: column;
 height: 100vh;
 width: 50vw;
 }
@@ -41,7 +43,7 @@ margin-top: 30px;
 .user{
 inset: 0px;
 margin-left: 40px;
-margin-bottom: 30px;  
+margin-bottom: -25px;  
 }
 
 .userimg {
@@ -95,20 +97,79 @@ padding-left: 20px;
     align-items: center;
 }
 
-.userInfo{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-}
+
 
 .name {
     margin-right: 5px;
     font-size: 15px;
     margin-bottom: 0;
     color: white;
-  }
+}
   
-  .username {
+.username {
     font-size: 15px;
     color: rgb(114, 131, 148);
-  }
+    margin-right: 5px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.textinput {
+    display: flex;
+    justify-content: center;
+}
+
+.addTweet {
+    justify-content: center;    
+}
+
+.input {
+    width: 80%;
+    height: 50px;
+    background-color: transparent;
+    border-width: 0 0 1px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #d3d3d3;
+}
+
+.contentundertext {
+    width: 90%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 90px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    background-color: #409bf1;
+    border: none;
+    border-radius: 40px;
+    font-family: Verdana,Geneva,Tahoma,sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+}
+
+.textlength {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-left: 12px;
+}
+

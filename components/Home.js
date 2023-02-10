@@ -96,8 +96,8 @@ function Home() {
               />
             </div>
             <div className={styles.userInfo}>
-              <p className={styles.name}>user{user.firstname}</p>
-              <p className={styles.username}>@user{user.username}</p>
+              <p className={styles.name}>{user.firstname}</p>
+              <p className={styles.username}>@{user.username}</p>
             </div>
           </div>
           <div className={styles.logout_btn}>

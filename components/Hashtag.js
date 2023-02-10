@@ -3,10 +3,11 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../reducers/user";
 import Link from "next/Link";
+
+// import LastTweets from "./LastTweets";
 import Trends from "./Trends";
 import styles from "../styles/Hashtag.module.css";
 import Image from "next/image";
-
 
 function Hashtag() {
   const dispatch = useDispatch();
@@ -17,7 +18,6 @@ function Hashtag() {
   if (!user.token) {
     router.push("/");
   }
-
 
   return (
     <div className={styles.PageTwitter}>
@@ -68,16 +68,16 @@ function Hashtag() {
             <span>Hashtag</span>
           </div>
           <div className={styles.searchHashtag}>
-            <input
+            <textarea
               type="text"
-              
+              placeholder="#"
               className={styles.Hashtag_searchBar}
               value="#"
-            ></input>
+              /> 
           </div>
         </div>
         <div className={styles.Hashtagmatch}>
-          
+          {/* tweets based on hashtags */}
         </div>
       </div>
       <div className={styles.right}>

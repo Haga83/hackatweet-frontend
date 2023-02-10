@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../reducers/user";
+import { login, logout } from "../reducers/user";
 import Link from "next/Link";
+
 // import LastTweets from "./LastTweets";
 // import Trends from "./Trends";
 import styles from "../styles/Home.module.css";
@@ -41,7 +42,7 @@ function Home() {
                 height={46}
               />
             </div>
-            {/* user */}
+            <h3 className={styles.h3}>@ {user.username}</h3>
           </div>
           <div className={styles.logout_btn}>
             <button

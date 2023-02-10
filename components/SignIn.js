@@ -45,7 +45,7 @@ function SignIn() {
         type="text"
         className={styles.input}
         onChange={(e) => setUsername(e.target.value)}
-        value={username}
+        value={data.username}
         placeholder="Username"
       />
       <input

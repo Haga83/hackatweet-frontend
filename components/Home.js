@@ -140,7 +140,9 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className={styles.tweets}>{tweetsArr}</div>
+        <div className={styles.tweetscroll}>
+            <div className={styles.tweets}>{tweetsArr}</div>
+        </div>
       </div>
       <div className={styles.right}>
         <div className={styles.Trends}>

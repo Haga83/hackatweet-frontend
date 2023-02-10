@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../reducers/user";
 import Image from "next/image";
 import styles from "../styles/SignIn.module.css";
@@ -19,11 +18,12 @@ function SignIn() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log("data", data);
         data.result &&
           dispatch(
             login({
               token: data.token,
-              firstName: data.firstName,
+              firstname: data.firstname,
               username: data.username,
             })
           );
@@ -32,7 +32,13 @@ function SignIn() {
 
   return (
     <div className={styles.container}>
-      <Image className={styles.logo} src="/logo.webp" alt="logo" width={50} height={50} />
+      <Image
+        className={styles.logo}
+        src="/logo.webp"
+        alt="logo"
+        width={50}
+        height={50}
+      />
       <h3 className={styles.title}>Connect to Hackatweet</h3>
       <input
         type="text"

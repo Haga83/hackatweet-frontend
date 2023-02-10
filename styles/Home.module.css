@@ -89,6 +89,26 @@ padding-top: 10px;
 padding-left: 20px; 
 }
 
-.h3 {
-    color: white;
+.id {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+
+.userInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.name {
+    margin-right: 5px;
+    font-size: 15px;
+    margin-bottom: 0;
+    color: white;
+  }
+  
+  .username {
+    font-size: 15px;
+    color: rgb(114, 131, 148);
+  }

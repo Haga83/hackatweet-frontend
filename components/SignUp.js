@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../reducers/user";
 import Image from "next/image";
 import styles from "../styles/SignUp.module.css";
@@ -20,14 +19,28 @@ function SignUp() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         data.result &&
-          dispatch(login({ token: data.token, username, firstname }));
+          dispatch(
+            login({
+              token: data.token,
+              username: data.username,
+              firstname: data.firstname,
+            })
+          );
       });
   };
 
   return (
     <div className={styles.container}>
-      <Image className={styles.logo} src="/logo.webp" alt="logo" width={50} height={50} padding-top={10} />
+      <Image
+        className={styles.logo}
+        src="/logo.webp"
+        alt="logo"
+        width={50}
+        height={50}
+        padding-top={10}
+      />
       <h2 className={styles.title}>Create your Hackatweet account</h2>
       <input
         type="text"

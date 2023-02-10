@@ -94,14 +94,10 @@ function Home() {
                 height={46}
               />
             </div>
-<<<<<<< HEAD
-            <h3 className={styles.h3}>@ {user.username}</h3>
-=======
             <div className={styles.userInfo}>
               <p className={styles.name}>{user.firstname}</p>
               <p className={styles.username}>@{user.username}</p>
             </div>
->>>>>>> homeTweet
           </div>
           <div className={styles.logout_btn}>
             <button
